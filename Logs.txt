@@ -1,0 +1,2 @@
+Human{hairStyle=ANY, cloth={FORTHEWHOLEBODY=Things.Cloth@682a0b20}, emotions=null, name='Alisa', rank=NORMAL, invite={}, actionRightNow=STAY, gender=FEMALE, things={}, age=12}говорит Human{hairStyle=BUCCULA, cloth={FORTHEWHOLEBODY=Things.Cloth@5b480cf9}, emotions=null, name='Швейцар', rank=DOORMAN, invite={}, actionRightNow=STAY, gender=MALE, things={}, age=20}: Привет меня зовут Алиса я очень хорошая девочка
+Alisa пытается поднять свой IQ. Не успешно!
