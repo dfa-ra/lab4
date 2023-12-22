@@ -1,7 +1,10 @@
 package Things.Inscriptions.TypeInscription;
 
-import Things.BufThing;
 import Things.Inscriptions.Inscription;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Letter implements Inscription {
 
@@ -23,5 +26,29 @@ public class Letter implements Inscription {
     @Override
     public String getName() {
         return name;
+    }
+
+    public void delText(int hmWords){
+        class Eraser{
+            public void delText(int hmWords){
+
+                List<String> myList = new ArrayList<String>(Arrays.asList(text.split(" ")));
+                System.out.println(myList);
+                for (int i = 0; i < hmWords; i++)
+                    try {
+                        myList.removeLast();
+                    }catch (Exception ignored){
+
+                    }
+                text = "";
+                for (String s : myList) {
+                    text = text + s + " ";
+                }
+            }
+        }
+
+        Eraser eraser = new Eraser();
+
+        eraser.delText(hmWords);
     }
 }

@@ -44,6 +44,7 @@ public interface InfoHumane  {
 
     void Speak(String text);
     void Speak(String text, InfoHumane companion, int time);
+    void Sneeze();
     HashMap<Integer, HashMap<Humane.TypeMemory, List<String>>> getMemory();
     void AddMemory(String text, Humane.TypeMemory typeMemory, HashMap<Integer, HashMap<Humane.TypeMemory, List<String>>> memory, String names, int time, int IQ);
 }

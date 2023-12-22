@@ -20,7 +20,7 @@ public abstract class Humane extends Actor implements Mementomory {
     protected HashMap<TypeOuterwearCloth, Cloth> cloth = new HashMap<>();
     protected Emotions emotions;
 
-    protected String name;
+
     protected Rank rank;
     protected int IQ;
     protected HashMap<String, Action> invite = new HashMap<>();
@@ -92,16 +92,20 @@ public abstract class Humane extends Actor implements Mementomory {
     }
 
     public void Speak(String text){
-        System.out.println(name + " -");
+        System.out.println(place.getName()+": "+ name + " -");
         System.out.println("\t'" + text + "'");
         FileLog.writeLog( this + "говорит: " + text);
     }
     public void Speak(String text, InfoHumane companion, int time){
-        System.out.println(name + " обращаясь к " + companion.getName());
+        System.out.println(place.getName()+": "+ name + " обращаясь к " + companion.getName());
         System.out.println("\t'" + text + "'");
         AddMemory(text, TypeMemory.WHATWAS_I_SAID, memory, companion.getName(), time, IQ);
         AddMemory(text, TypeMemory.WHATWASSAID, companion.getMemory(), name, time, companion.getIQ());
         FileLog.writeLog(this + "говорит " + companion + ": " + text);
+    }
+
+    public void Sneeze(){
+        System.out.println(place.getName()+": "+ name + " чихнул");
     }
 
     public HashMap<Integer, HashMap<TypeMemory, List<String>>> getMemory() {
@@ -116,7 +120,8 @@ public abstract class Humane extends Actor implements Mementomory {
         INTEREST,
         SAD,
         SADNESS,
-        FUN
+        FUN,
+        CRY
     }
     public enum Rank {
         QUEEN,
@@ -127,7 +132,8 @@ public abstract class Humane extends Actor implements Mementomory {
         DUKE,
         COUNTESS,
         EARL,
-        NORMAL
+        NORMAL,
+        ANY
     }
     public enum TypeMemory {
         WHATWASSAID,

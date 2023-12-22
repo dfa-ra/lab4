@@ -20,7 +20,7 @@ public class Place {
     protected List<Thing> thingsInside = new ArrayList<>();
     private Place parent;
     private int [] position = new int[2];
-    String name;
+    protected String name;
     //String [][] field;
 
     public Place (String name, int x, int y){
@@ -73,6 +73,10 @@ public class Place {
     }
     public Place getParent() {
         return parent;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public List<Thing> getThingsInside() {

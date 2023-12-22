@@ -48,8 +48,8 @@ public interface Mementomory {
             myList.set(id1, myList.get(id2));
             myList.set(id2, tmp);
         }
-        for (int i = 0; i < myList.size(); i++) {
-            text = text + myList.get(i) + " ";
+        for (String s : myList) {
+            text = text + s + " ";
         }
         return text;
     }

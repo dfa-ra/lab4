@@ -31,6 +31,7 @@ public abstract class Actor {
     public Thing takeThing (String things){
         Thing tmp = this.things.get(things);
         this.things.remove(things);
+        System.out.println(place.getName()+": "+ name + ": убрал вещь" + tmp.getName() + " из запазухи");
         return tmp;
     }
     public void nextAge() {
@@ -49,7 +50,7 @@ public abstract class Actor {
     public Gender getGender() {
         return gender;
     }
-
+    protected String name;
     public Place getPlace() {
         return place;
     }
@@ -60,6 +61,7 @@ public abstract class Actor {
     }
 
     public void goNextPlace(String name, int x, int y) throws InvalidPlaceExceptoin{
+        System.out.println(place.getName()+": "+ this.name + " переместился в место под названием '" + name + "' в координаты (" + String.valueOf(x) +";"+ String.valueOf(y) + ")");
         place.delActor((InfoHumane) this);
         place = place.goPlace(name);
         place.addActor((InfoHumane) this, x, y);
@@ -67,6 +69,7 @@ public abstract class Actor {
                 "y=" + String.valueOf(y));
     }
     public void goBackPlace(int x, int y){
+        System.out.println(place.getName()+": "+ name + " вышел из '" + place.getName() + "' в координаты (" + String.valueOf(x) +";"+ String.valueOf(y) + ")");
         place.delActor((InfoHumane) this);
         place = place.getParent();
         place.addActor((InfoHumane) this, x, y);
@@ -76,6 +79,7 @@ public abstract class Actor {
     public void Move(int x, int y){
         positionInPlace[0]=x;
         positionInPlace[1]=y;
+        System.out.println(place.getName()+": "+ name + ": переместился в координаты (" + String.valueOf(x) + ";" + String.valueOf(x) + ")");
         FileLog.writeLog(this + " переместился в координаты x=" + String.valueOf(x) +
                 "y=" + String.valueOf(y));
     }
