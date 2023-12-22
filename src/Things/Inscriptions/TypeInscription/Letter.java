@@ -1,5 +1,6 @@
 package Things.Inscriptions.TypeInscription;
 
+import Exeptions.InvalidIndexWordException;
 import Things.Inscriptions.Inscription;
 
 import java.util.ArrayList;
@@ -30,16 +31,26 @@ public class Letter implements Inscription {
 
     public void delText(int hmWords){
         class Eraser{
+            private void isOk(List<String> a){
+
+            }
             public void delText(int hmWords){
 
                 List<String> myList = new ArrayList<String>(Arrays.asList(text.split(" ")));
                 System.out.println(myList);
-                for (int i = 0; i < hmWords; i++)
-                    try {
-                        myList.removeLast();
-                    }catch (Exception ignored){
+                if (hmWords > myList.size())
+                    throw new InvalidIndexWordException("вы хотите стереть больше чем это возможно");
+                for (int i = 0; i < hmWords; i++) {
+
+                    if (myList.isEmpty()) {
 
                     }
+                    else {
+                        System.out.println(myList);
+                        System.out.println(i);
+                        myList.removeLast();
+                    }
+                }
                 text = "";
                 for (String s : myList) {
                     text = text + s + " ";

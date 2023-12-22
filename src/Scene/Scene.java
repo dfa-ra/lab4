@@ -68,12 +68,12 @@ public class Scene{
 
     public void startScene() throws InvalidPlaceExceptoin {
 //        Thing test = new Thing("test", null, new Letter("test"));
-//        test.toLetter().setText("Как найти в стоге сена, как найти в стоге сена иглу, как понять им дать");
+//        test.toLetter().setText("Как найти в стоге сена,");
 //
 //        System.out.println(test.toLetter().getText());
-//        test.toLetter().delText(3);
+//        test.toLetter().delText(20);
 //        System.out.println(test.toLetter().getText());
-//
+
         CreateScene();
 
         Characters.get("Швейцар").goBackPlace(1, 11);
