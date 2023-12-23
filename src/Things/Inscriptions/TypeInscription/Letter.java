@@ -31,9 +31,6 @@ public class Letter implements Inscription {
 
     public void delText(int hmWords){
         class Eraser{
-            private void isOk(List<String> a){
-
-            }
             public void delText(int hmWords){
 
                 List<String> myList = new ArrayList<String>(Arrays.asList(text.split(" ")));

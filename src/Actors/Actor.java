@@ -34,6 +34,11 @@ public abstract class Actor {
         System.out.println(place.getName()+": "+ name + ": убрал вещь" + tmp.getName() + " из запазухи");
         return tmp;
     }
+
+    public Thing getThing(String name) {
+        return things.get(name);
+    }
+
     public void nextAge() {
         this.age += 1;
     }

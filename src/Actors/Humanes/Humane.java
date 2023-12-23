@@ -85,6 +85,8 @@ public abstract class Humane extends Actor implements Mementomory {
 
     public void setEmotions(Emotions emotions) {
         this.emotions = emotions;
+        System.out.println(place.getName() + ": " + name + " состояние - " + emotions.getTitle());
+        FileLog.writeLog(name + " новая эмоция " + emotions);
     }
 
     public HashMap<TypeOuterwearCloth, Cloth> getCloth() {
@@ -113,15 +115,25 @@ public abstract class Humane extends Actor implements Mementomory {
     }
 
     public enum Emotions {
-        WITHOUT_EMOTIONS,
-        QUIET_LAUGHTER,
-        LAUGHTER,
-        LOUD_LAUGHTER,
-        INTEREST,
-        SAD,
-        SADNESS,
-        FUN,
-        CRY
+        WITHOUT_EMOTIONS("без эмоций"),
+        QUIET_LAUGHTER("тихий смех"),
+        LAUGHTER("смех"),
+        LOUD_LAUGHTER("громкий смех"),
+        INTEREST("заинтересованность"),
+        SAD("грусть"),
+        SADNESS("печаль"),
+        FUN("радость"),
+        CRY("плачь"),
+        CRYHARD("истерика");
+        private final String title;
+
+        Emotions(String title) {
+            this.title = title;
+        }
+
+        public String getTitle() {
+            return title;
+        }
     }
     public enum Rank {
         QUEEN,

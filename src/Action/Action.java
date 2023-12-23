@@ -29,7 +29,13 @@ public class Action {
     public void startAction(){
         System.out.println("___________");
         System.out.println(place.getName() + ": началось действие " + nameAction + ": ");
-        System.out.println("Участники " + String.valueOf(actorsInAction));
+        System.out.print("Участники: ");
+        for (InfoHumane actor : actorsInAction) {
+            if (actor == actorsInAction.getLast())
+                System.out.print(actor.getName() + ".\n");
+            else
+                System.out.print(actor.getName() + ", ");
+        }
         FileLog.writeLog("Началось действие " + nameAction + "\n\t Участники: " + String.valueOf(actorsInAction));
     }
     public void action(){

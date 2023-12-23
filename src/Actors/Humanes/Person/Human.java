@@ -31,6 +31,7 @@ public class Human extends Humane implements InfoHumane {
                 ", age=" + age +
                 '}';
     }
+    
 
     @Override
     public void AddMemory(String text, TypeMemory typeMemory, HashMap<Integer, HashMap<TypeMemory, List<String>>> memory, String names, int time, int IQ) {

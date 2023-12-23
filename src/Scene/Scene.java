@@ -80,7 +80,7 @@ public class Scene{
         Characters.get("Alisa").setEmotions(Humane.Emotions.INTEREST);
         Characters.get("Alisa").Move(3, 11);
         int time = (int) ((System.currentTimeMillis()));
-        Characters.get("Лакей").Speak( Characters.get("Лакей").getAllThings().get("Письмо").toLetter().getText(), Characters.get("Швейцар"), time);
+        Characters.get("Лакей").Speak( "Герцогине от королевы. Приглашение на вечерний крокет.", Characters.get("Швейцар"), time);
         Characters.get("Швейцар").Speak(Characters.get("Швейцар").getMemory().get(time).get(Humane.TypeMemory.WHATWASSAID).getFirst());
         Bow bow = new Bow("Поклон", "Поклон нескольких человек", 2, nowScene);
         bow.addActorsInAction(Characters.get("Лакей"));
@@ -125,6 +125,7 @@ public class Scene{
         debosh.addActorsInAction(Characters.get("Дима"));
         debosh.startAction();
         debosh.action();
+        Characters.get("Роман").setEmotions(Humane.Emotions.CRYHARD);
         Action knock = new Action("Стук в дверь", "Постучать в дверь", 1, nowScene){
             @Override
             public void action(){

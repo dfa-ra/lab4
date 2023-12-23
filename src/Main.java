@@ -49,7 +49,7 @@ public class Main {
         Human supportActor3 = new Human("Кирилл", Humane.Rank.ANY, HairStyle.ANY,
                 new HashMap<>(), 20, Actor.Gender.MALE, 110);
         Thing letter = new Thing("письмо", Karas, new Letter("Чудо письмо"));
-        letter.toLetter().setText("Герцогине от королевы. Приглашение на вечерний крокет.");
+        letter.toLetter().setText("Дорогая герцогиня!\n Приглашаю тебя на игру в крокет сегодня вечером в 19 часов утра. Захвати с собой нашего священного элексира 'Tundra'.\n Твоя Королева.");
         Karas.setThings("Письмо", letter);
         Scene scene = new Scene();
         scene.addPerson(Alisa.getName(), Alisa);

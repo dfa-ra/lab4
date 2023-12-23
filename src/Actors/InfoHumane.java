@@ -16,6 +16,7 @@ public interface InfoHumane  {
     void setThings(String things, Thing thing);
     HashMap<String, Thing> getAllThings();
     Thing takeThing (String things);
+    Thing getThing(String name);
     void nextAge();
     int getAge();
     void setActionRightNow(Actor.ActionRightNow actionRightNow);
